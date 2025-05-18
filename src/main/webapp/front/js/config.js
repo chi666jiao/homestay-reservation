@@ -65,7 +65,10 @@ var centerMenu = [
 
 
 var indexNav = [
-
+    // {
+    //     name: 'AI推荐',
+    //     url: './pages/recommend/recommend.html'
+    // },
     {
         name: '餐饮',
         url: './pages/canyin/list.html'
@@ -78,14 +81,15 @@ var indexNav = [
         name: '景点',
         url: './pages/jingdian/list.html'
     },
-    {
-        name: '旅游路线',
-        url: './pages/lvyouluxian/list.html'
-    },
+    // {
+    //     name: '旅游路线',
+    //     url: './pages/lvyouluxian/list.html'
+    // },
     {
         name: '民宿',
         url: './pages/minsu/list.html'
-    },
+    }
+    // ,
     // {
     //     name: '民宿介绍',
     //     url: './pages/singleSeach/detail.html?id=1'
@@ -94,10 +98,10 @@ var indexNav = [
     //     name: '商业合作',
     //     url: './pages/singleSeach/detail.html?id=2'
     // },
-    {
-        name: '特产',
-        url: './pages/techan/list.html'
-    },
+    // {
+    //     name: '特产',
+    //     url: './pages/techan/list.html'
+    // },
 
 ]
 

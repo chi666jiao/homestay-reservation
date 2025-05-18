@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.TravelRequestDao">
+
+    <!-- 通用结果映射 -->
+    <resultMap id="BaseResultMap" type="com.entity.TravelRequest">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="interests" property="interests" jdbcType="VARCHAR"/>
+        <result column="destination" property="destination" jdbcType="VARCHAR"/>
+        <result column="budget" property="budget" jdbcType="INTEGER"/>
+        <result column="days" property="days" jdbcType="INTEGER"/>
+        <result column="activities" property="activities" jdbcType="VARCHAR"/>
+        <result column="request_time" property="requestTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 保存旅行请求 -->
+    <insert id="insert" parameterType="com.entity.TravelRequest"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO travel_request (
+        user_id,
+        interests,
+        destination,
+        budget,
+        days,
+        activities,
+        request_time
+        ) VALUES (
+        #{userId},
+        #{interests},
+        #{destination},
+        #{budget},
+        #{days},
+        #{activities},
+        <choose>
+            <when test="requestTime != null">
+                #{requestTime}
+            </when>
+            <otherwise>
+                CURRENT_TIMESTAMP()
+            </otherwise>
+        </choose>
+        )
+    </insert>
+
+</mapper>
